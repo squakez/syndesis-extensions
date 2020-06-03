@@ -5,8 +5,6 @@ import java.util.Optional;
 
 import io.syndesis.extension.api.Step;
 import io.syndesis.extension.api.annotations.Action;
-import io.syndesis.extensions.test.A;
-import io.syndesis.extensions.test.B;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.model.ProcessorDefinition;
@@ -16,12 +14,13 @@ public class ExtensionAction implements Step {
 
 
     @Override
-    public Optional<ProcessorDefinition<?>> configure(CamelContext context, ProcessorDefinition<?> definition, Map<String, Object> parameters) {
+    public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition definition, Map<String, Object> parameters) {
         return Optional.of(definition.process(this::process));
     }
 
     void process(Exchange exchange) throws Exception {
-        System.out.println(A.a());
-        System.out.println(B.b());
+        String textComingFromLibrary = Class.forName("io.syndesis.extensions.test.A").newInstance().toString();
+        System.out.println("Runtime library processed: " + textComingFromLibrary);
+        exchange.getIn().setBody(textComingFromLibrary, String.class);
     }
 }

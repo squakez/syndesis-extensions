@@ -31,8 +31,8 @@
     <packaging>jar</packaging>
     <version>1.0.0</version>
 
-    <name>Example JDBC Driver Library</name>
-    <description>Syndesis Extension for adding a custom JDBC Driver</description>
+    <name>Example Runtime Library</name>
+    <description>Syndesis Library extension for A and B classes</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -58,25 +58,26 @@
 
     <dependencies>
         <dependency>
-            <groupId>test</groupId>
+            <!-- groupId>test</groupId>
             <artifactId>a-driver</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/lib/library-a-1.0.0.jar</systemPath>
+            <systemPath>${project.basedir}/lib/library-a-1.0.0.jar</systemPath -->
+            <groupId>io.syndesis.extensions</groupId>
+            <artifactId>library-a</artifactId>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
-            <groupId>test</groupId>
+            <!-- groupId>test</groupId>
             <artifactId>b-driver</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/lib/library-b-1.0.0.jar</systemPath>
+            <systemPath>${project.basedir}/lib/library-b-1.0.0.jar</systemPath -->
+            <groupId>io.syndesis.extensions</groupId>
+            <artifactId>library-b</artifactId>
+            <version>1.0.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.elasticsearch/elasticsearch -->
-        <dependency>
-            <groupId>org.elasticsearch</groupId>
-            <artifactId>elasticsearch</artifactId>
-            <version>7.6.1</version>
-        </dependency>
+
     </dependencies>
 
     <build>

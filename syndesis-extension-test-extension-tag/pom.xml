@@ -43,22 +43,6 @@
       <artifactId>extension-api</artifactId>
       <scope>provided</scope>
     </dependency>
-
-    <dependency>
-      <groupId>io.syndesis.extensions</groupId>
-      <artifactId>library-a</artifactId>
-      <version>1.0.0</version>
-      <systemPath>${project.basedir}/../syndesis-library-test-driver/lib/library-a-1.0.0.jar</systemPath>
-      <scope>system</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>io.syndesis.extensions</groupId>
-      <artifactId>library-b</artifactId>
-      <version>1.0.0</version>
-      <systemPath>${project.basedir}/../syndesis-library-test-driver/lib/library-b-1.0.0.jar</systemPath>
-      <scope>system</scope>
-    </dependency>
   </dependencies>
 
   <build>
